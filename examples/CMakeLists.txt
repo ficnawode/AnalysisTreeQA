@@ -14,7 +14,17 @@ if(PROJECT_LINK_DIRECTORIES)
 endif()
 
 add_executable(example example.cpp)
-add_dependencies(example AnalysisTreeQA)
-target_link_libraries(example ${ROOT_LIBRARIES} AnalysisTreeQA AnalysisTreeBase AnalysisTreeInfra)
+add_executable(pid_gauss pid_gauss.cpp)
+add_executable(onnx_val example1.cpp)
+add_executable(b_eng_thesis b_eng_thesis.cpp)
 
-install (TARGETS example RUNTIME DESTINATION bin)
+add_dependencies(example AnalysisTreeQA)
+add_dependencies(onnx_val AnalysisTreeQA)
+add_dependencies(b_eng_thesis AnalysisTreeQA)
+
+target_link_libraries(example ${ROOT_LIBRARIES} AnalysisTreeQA AnalysisTreeBase AnalysisTreeInfra)
+target_link_libraries(onnx_val ${ROOT_LIBRARIES} AnalysisTreeQA AnalysisTreeBase AnalysisTreeInfra)
+target_link_libraries(pid_gauss ${ROOT_LIBRARIES} AnalysisTreeQA AnalysisTreeBase AnalysisTreeInfra)
+target_link_libraries(b_eng_thesis ${ROOT_LIBRARIES} AnalysisTreeQA AnalysisTreeBase AnalysisTreeInfra)
+
+install (TARGETS example onnx_val pid_gauss b_eng_thesis RUNTIME DESTINATION bin)

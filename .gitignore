@@ -3,6 +3,9 @@
 # Prerequisites
 *.d
 
+# ROOT files
+*.root
+
 # Compiled Object files
 *.slo
 *.lo
@@ -39,6 +42,8 @@
 .idea/misc.xml
 .idea/modules.xml
 .idea/vcs.xml
+
+.cache/
 
 *build*/
 install/
