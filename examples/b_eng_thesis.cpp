@@ -38,6 +38,8 @@ void pid_gauss(const std::string filelist) {
     auto simpdg_cut = EqualsCut("VtxTracks.mc_pdg", pdg);
     auto true_pdg_cut = new AnalysisTree::Cuts("P_pdg", {simpdg_cut});
     task->AddH2({"p/q, GeV/c", p_over_q, {400, 0, 12}}, {"m^{2}, GeV^{2}/c^{4}", mass2, {400, -1, 2}}, true_pdg_cut);
+    task->AddH2({"#eta ", {"VtxTracks", "eta"}, {400, 0, 8}}, {"p_T, GeV/c ", {"VtxTracks", "pT"}, {400, -0.1, 4}}, true_pdg_cut);
+    task->AddH2({"p, GeV/c", p_over_q, {100, 0, 12}}, {"TRD Energy Loss 0,  GeV", {"TrdTracks", "energy_loss_0"}, {100, 0.1, 12}}, true_pdg_cut);
   }
 
   {
@@ -45,12 +47,16 @@ void pid_gauss(const std::string filelist) {
     auto simpdg_cut = EqualsCut("VtxTracks.mc_pdg", pdg);
     auto true_pdg_cut = new AnalysisTree::Cuts("K_pdg", {simpdg_cut});
     task->AddH2({"p/q, GeV/c", p_over_q, {400, 0, 12}}, {"m^{2}, GeV^{2}/c^{4}", mass2, {400, -1, 2}}, true_pdg_cut);
+    task->AddH2({"#eta ", {"VtxTracks", "eta"}, {400, 0, 8}}, {"p_T, GeV/c ", {"VtxTracks", "pT"}, {400, -0.1, 4}}, true_pdg_cut);
+    task->AddH2({"p, GeV/c", p_over_q, {100, 0, 12}}, {"TRD Energy Loss 0,  GeV", {"TrdTracks", "energy_loss_0"}, {100, 0.1, 12}}, true_pdg_cut);
   }
   {
     std::vector<double> pdg{13, 211, 11};
     auto simpdg_cut = CreateEqualsVectorCut("VtxTracks.mc_pdg", pdg);
     auto true_pdg_cut = new AnalysisTree::Cuts("pi_pdg", {simpdg_cut});
     task->AddH2({"p/q, GeV/c", p_over_q, {400, 0, 12}}, {"m^{2}, GeV^{2}/c^{4}", mass2, {400, -1, 2}}, true_pdg_cut);
+    task->AddH2({"#eta ", {"VtxTracks", "eta"}, {400, 0, 8}}, {"p_T, GeV/c ", {"VtxTracks", "pT"}, {400, -0.1, 4}}, true_pdg_cut);
+    task->AddH2({"p, GeV/c", p_over_q, {100, 0, 12}}, {"TRD Energy Loss 0,  GeV", {"TrdTracks", "energy_loss_0"}, {100, 0.1, 12}}, true_pdg_cut);
   }
 
   man->AddTask(task);
