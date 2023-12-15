@@ -17,14 +17,17 @@ add_executable(example example.cpp)
 add_executable(pid_gauss pid_gauss.cpp)
 add_executable(onnx_val example1.cpp)
 add_executable(b_eng_thesis b_eng_thesis.cpp)
+add_executable(rich_plots rich_plots.cpp)
 
 add_dependencies(example AnalysisTreeQA)
 add_dependencies(onnx_val AnalysisTreeQA)
 add_dependencies(b_eng_thesis AnalysisTreeQA)
+add_dependencies(rich_plots AnalysisTreeQA)
 
 target_link_libraries(example ${ROOT_LIBRARIES} AnalysisTreeQA AnalysisTreeBase AnalysisTreeInfra)
 target_link_libraries(onnx_val ${ROOT_LIBRARIES} AnalysisTreeQA AnalysisTreeBase AnalysisTreeInfra)
 target_link_libraries(pid_gauss ${ROOT_LIBRARIES} AnalysisTreeQA AnalysisTreeBase AnalysisTreeInfra)
 target_link_libraries(b_eng_thesis ${ROOT_LIBRARIES} AnalysisTreeQA AnalysisTreeBase AnalysisTreeInfra)
+target_link_libraries(rich_plots ${ROOT_LIBRARIES} AnalysisTreeQA AnalysisTreeBase AnalysisTreeInfra)
 
-install (TARGETS example onnx_val pid_gauss b_eng_thesis RUNTIME DESTINATION bin)
+install (TARGETS example onnx_val pid_gauss rich_plots b_eng_thesis RUNTIME DESTINATION bin)

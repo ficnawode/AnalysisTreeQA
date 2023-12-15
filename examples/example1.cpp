@@ -108,7 +108,7 @@ void example(const std::string& filelist) {
   // PROTONS
   {
     auto bdt_cut = RangeCut("VtxTracks.onnx_pred_0_2", 0.999, 1.1);
-    std::vector<double> pdg{13, 211, 11};
+    std::vector<double> pdg{-13, 211, -11};
     auto simpdg_cut = CreateEqualsVectorCut("VtxTracks.mc_pdg", pdg);
     auto wrong_pid_cut = CreateNotEqualsVectorCut("VtxTracks.mc_pdg", pdg);
 
