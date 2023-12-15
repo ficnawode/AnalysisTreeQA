@@ -14,7 +14,7 @@ void create_rich_plots(QA::Task* task, int pdg, std::string particle_name, doubl
 
   Cuts* all_simulated_cut = new Cuts(particle_name, {simpdg_cut});
 
-  task->AddH2({"p/q, (GeV/c)", p_over_q, {nbins, p_min, p_max}}, {"radius", Variable::FromString("RichRings.radius"), {nbins, 0, 10}}, all_simulated_cut);
+  task->AddH2({"p/q, (GeV/c)", p_over_q, {nbins, p_min, p_max}}, {"r, (cm)", Variable::FromString("RichRings.radius"), {nbins, 0, 10}}, all_simulated_cut);
 
   task->AddH1({"p/q, (GeV/c)", p_over_q, {nbins, p_min, p_max}}, all_simulated_cut);
   task->AddH1({"p/q, (GeV/c)", {Variable::FromString("RichRings.radius")}, {nbins, -1, 10}}, all_simulated_cut);
