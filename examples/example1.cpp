@@ -55,7 +55,7 @@ void example(const std::string& filelist) {
   auto mass2 = Variable::FromString("TofHits.mass2");
 
   mass2.SetName("m2");
-  task->AddH2({"p/q, GeV/c", p_over_q, {400, -12, 12}}, {"m^{2}, GeV^{2}/c^{4}", mass2, {400, -1, 2}});
+  task->AddH2({"p/q, (GeV/c)", p_over_q, {400, -12, 12}}, {"m^{2}, (GeV^{2}/c^{4})", mass2, {400, -1, 2}});
 
   auto q_cut = RangeCut("VtxTracks.q", 0, 2);
 
@@ -71,15 +71,15 @@ void example(const std::string& filelist) {
     Cuts* match_cut = new Cuts("P_match", {bdt_cut, q_cut, simpdg_cut});
     Cuts* mismatch_cut = new Cuts("P_mismatch", {bdt_cut, q_cut, wrong_pid_cut});
 
-    task->AddH2({"p/q, GeV/c", p_over_q, {400, 0, 12}}, {"m^{2}, GeV^{2}/c^{4}", mass2, {400, -1, 2}}, xgb_cut);
-    task->AddH2({"p/q, GeV/c", p_over_q, {400, 0, 12}}, {"m^{2}, GeV^{2}/c^{4}", mass2, {400, -1, 2}}, all_simulated_cut);
-    task->AddH2({"p/q, GeV/c", p_over_q, {400, 0, 12}}, {"m^{2}, GeV^{2}/c^{4}", mass2, {400, -1, 2}}, match_cut);
-    task->AddH2({"p/q, GeV/c", p_over_q, {400, 0, 12}}, {"m^{2}, GeV^{2}/c^{4}", mass2, {400, -1, 2}}, mismatch_cut);
+    task->AddH2({"p/q, (GeV/c)", p_over_q, {400, 0, 12}}, {"m^{2}, (GeV^{2}/c^{4})", mass2, {400, -1, 2}}, xgb_cut);
+    task->AddH2({"p/q, (GeV/c)", p_over_q, {400, 0, 12}}, {"m^{2}, (GeV^{2}/c^{4})", mass2, {400, -1, 2}}, all_simulated_cut);
+    task->AddH2({"p/q, (GeV/c)", p_over_q, {400, 0, 12}}, {"m^{2}, (GeV^{2}/c^{4})", mass2, {400, -1, 2}}, match_cut);
+    task->AddH2({"p/q, (GeV/c)", p_over_q, {400, 0, 12}}, {"m^{2}, (GeV^{2}/c^{4})", mass2, {400, -1, 2}}, mismatch_cut);
 
-    task->AddH1({"p/q, GeV/c", p_over_q, {400, 0, 12}}, xgb_cut);
-    task->AddH1({"p/q, GeV/c", p_over_q, {400, 0, 12}}, all_simulated_cut);
-    task->AddH1({"p/q, GeV/c", p_over_q, {400, 0, 12}}, match_cut);
-    task->AddH1({"p/q, GeV/c", p_over_q, {400, 0, 12}}, mismatch_cut);
+    task->AddH1({"p/q, (GeV/c)", p_over_q, {400, 0, 12}}, xgb_cut);
+    task->AddH1({"p/q, (GeV/c)", p_over_q, {400, 0, 12}}, all_simulated_cut);
+    task->AddH1({"p/q, (GeV/c)", p_over_q, {400, 0, 12}}, match_cut);
+    task->AddH1({"p/q, (GeV/c)", p_over_q, {400, 0, 12}}, mismatch_cut);
   }
 
   // kaons
@@ -94,15 +94,15 @@ void example(const std::string& filelist) {
     Cuts* match_cut = new Cuts("K+_match", {bdt_cut, q_cut, simpdg_cut});
     Cuts* mismatch_cut = new Cuts("K+_mismatch", {bdt_cut, q_cut, wrong_pid_cut});
 
-    task->AddH2({"p/q, GeV/c", p_over_q, {400, 0, 12}}, {"m^{2}, GeV^{2}/c^{4}", mass2, {400, -1, 2}}, xgb_cut);
-    task->AddH2({"p/q, GeV/c", p_over_q, {400, 0, 12}}, {"m^{2}, GeV^{2}/c^{4}", mass2, {400, -1, 2}}, all_simulated_cut);
-    task->AddH2({"p/q, GeV/c", p_over_q, {400, 0, 12}}, {"m^{2}, GeV^{2}/c^{4}", mass2, {400, -1, 2}}, match_cut);
-    task->AddH2({"p/q, GeV/c", p_over_q, {400, 0, 12}}, {"m^{2}, GeV^{2}/c^{4}", mass2, {400, -1, 2}}, mismatch_cut);
+    task->AddH2({"p/q, (GeV/c)", p_over_q, {400, 0, 12}}, {"m^{2}, (GeV^{2}/c^{4})", mass2, {400, -1, 2}}, xgb_cut);
+    task->AddH2({"p/q, (GeV/c)", p_over_q, {400, 0, 12}}, {"m^{2}, (GeV^{2}/c^{4})", mass2, {400, -1, 2}}, all_simulated_cut);
+    task->AddH2({"p/q, (GeV/c)", p_over_q, {400, 0, 12}}, {"m^{2}, (GeV^{2}/c^{4})", mass2, {400, -1, 2}}, match_cut);
+    task->AddH2({"p/q, (GeV/c)", p_over_q, {400, 0, 12}}, {"m^{2}, (GeV^{2}/c^{4})", mass2, {400, -1, 2}}, mismatch_cut);
 
-    task->AddH1({"p/q, GeV/c", p_over_q, {400, 0, 12}}, xgb_cut);
-    task->AddH1({"p/q, GeV/c", p_over_q, {400, 0, 12}}, all_simulated_cut);
-    task->AddH1({"p/q, GeV/c", p_over_q, {400, 0, 12}}, match_cut);
-    task->AddH1({"p/q, GeV/c", p_over_q, {400, 0, 12}}, mismatch_cut);
+    task->AddH1({"p/q, (GeV/c)", p_over_q, {400, 0, 12}}, xgb_cut);
+    task->AddH1({"p/q, (GeV/c)", p_over_q, {400, 0, 12}}, all_simulated_cut);
+    task->AddH1({"p/q, (GeV/c)", p_over_q, {400, 0, 12}}, match_cut);
+    task->AddH1({"p/q, (GeV/c)", p_over_q, {400, 0, 12}}, mismatch_cut);
   }
 
   // PROTONS
@@ -117,15 +117,15 @@ void example(const std::string& filelist) {
     Cuts* match_cut = new Cuts("Pi+_match", {bdt_cut, q_cut, simpdg_cut});
     Cuts* mismatch_cut = new Cuts("Pi+_mismatch", {bdt_cut, q_cut, wrong_pid_cut});
 
-    task->AddH2({"p/q, GeV/c", p_over_q, {400, 0, 12}}, {"m^{2}, GeV^{2}/c^{4}", mass2, {400, -1, 2}}, xgb_cut);
-    task->AddH2({"p/q, GeV/c", p_over_q, {400, 0, 12}}, {"m^{2}, GeV^{2}/c^{4}", mass2, {400, -1, 2}}, all_simulated_cut);
-    task->AddH2({"p/q, GeV/c", p_over_q, {400, 0, 12}}, {"m^{2}, GeV^{2}/c^{4}", mass2, {400, -1, 2}}, match_cut);
-    task->AddH2({"p/q, GeV/c", p_over_q, {400, 0, 12}}, {"m^{2}, GeV^{2}/c^{4}", mass2, {400, -1, 2}}, mismatch_cut);
+    task->AddH2({"p/q, (GeV/c)", p_over_q, {400, 0, 12}}, {"m^{2}, (GeV^{2}/c^{4})", mass2, {400, -1, 2}}, xgb_cut);
+    task->AddH2({"p/q, (GeV/c)", p_over_q, {400, 0, 12}}, {"m^{2}, (GeV^{2}/c^{4})", mass2, {400, -1, 2}}, all_simulated_cut);
+    task->AddH2({"p/q, (GeV/c)", p_over_q, {400, 0, 12}}, {"m^{2}, (GeV^{2}/c^{4})", mass2, {400, -1, 2}}, match_cut);
+    task->AddH2({"p/q, (GeV/c)", p_over_q, {400, 0, 12}}, {"m^{2}, (GeV^{2}/c^{4})", mass2, {400, -1, 2}}, mismatch_cut);
 
-    task->AddH1({"p/q, GeV/c", p_over_q, {400, 0, 12}}, xgb_cut);
-    task->AddH1({"p/q, GeV/c", p_over_q, {400, 0, 12}}, all_simulated_cut);
-    task->AddH1({"p/q, GeV/c", p_over_q, {400, 0, 12}}, match_cut);
-    task->AddH1({"p/q, GeV/c", p_over_q, {400, 0, 12}}, mismatch_cut);
+    task->AddH1({"p/q, (GeV/c)", p_over_q, {400, 0, 12}}, xgb_cut);
+    task->AddH1({"p/q, (GeV/c)", p_over_q, {400, 0, 12}}, all_simulated_cut);
+    task->AddH1({"p/q, (GeV/c)", p_over_q, {400, 0, 12}}, match_cut);
+    task->AddH1({"p/q, (GeV/c)", p_over_q, {400, 0, 12}}, mismatch_cut);
   }
 
   // TODO: add plots for where the bdt cuts do mismatches (simparticles.pdg)
